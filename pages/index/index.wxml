@@ -56,10 +56,7 @@
                 <text class="text-left">¥:{{item.price}}</text>
                 <text class="text-right">已售:{{item.sold}}</text>
               </view>
-
             </view>
-
-
           </view>
 
         </view>

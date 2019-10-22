@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/category/category",
-    "pages/page2/page2"
+    "pages/page2/page2",
+    "pages/gdetail/gdetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

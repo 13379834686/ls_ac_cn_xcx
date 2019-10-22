@@ -1,0 +1,2 @@
+<!--pages/gdetail/gdetail.wxml-->
+<view>{{goodsid}}</view>
