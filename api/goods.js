@@ -11,13 +11,21 @@ export function goodsCate(data) {
 }
 
 export function goodsList(data) {
+  // console.log(data);
   return request({
     url: `${baseUrl}/goods.glists`,
     method: 'post',
     data
   })
 }
-
+export function atGoodsList(data) {
+  // console.log(data);
+  return request({
+    url: `${baseUrl}/goods.atglists`,
+    method: 'post',
+    data
+  })
+}
 
 // 调用方式
 // import { goodsCate } from '../../api/user.js'

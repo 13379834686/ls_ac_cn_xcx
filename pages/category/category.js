@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    activeId: '1',
+    activeId: 0,
     typeList: [],
     goodsList: []
 
@@ -17,10 +17,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function() {
-
     this.gCate()
     this.glists()
-
   },
 
   gCate(){
@@ -28,31 +26,50 @@ Page({
     goods.goodsCate({
       ency:ency.CRYPTKEY
     }).then(function (res){
-      _this.setData({ typeList:res.data.list })
+      // console.log(res)
+      _this.setData({ 
+        typeList:res.data.list,
+        // activeId: res.data.gid
+        })
       }).catch(function (error){
         console.log(error)
     })
   },
+
   glists(){
     var _this = this
     goods.goodsList({
-      ency: ency.CRYPTKEY
+      ency: ency.CRYPTKEY,
     }).then(function (res) {
-      _this.setData({ goodsList: res.data.glist })
-      // console.log(res)
+      _this.setData({ 
+        goodsList: res.data.glist,
+      })
+      console.log(res)
     }).catch(function (error) {
       console.log(error)
     })
   },
 
+
   selectType(e) {
+    var _this = this
     // 点击获取当前选中id
-    // console.log(e.currentTarget.dataset.id)
+    console.log("222222--"+e.currentTarget.dataset.id)
+    goods.atGoodsList({
+      ency: ency.CRYPTKEY,
+      typeid: e.currentTarget.dataset.id
+    }).then(function (res) {
+      _this.setData({ goodsList: res.data.productList })
+      // console.log(res)
+    }).catch(function (error) {
+      console.log(error)
+    })
+
     this.setData({
       activeId: e.currentTarget.dataset.id
     })
   },
-
+  
   // 通过navigateTo实现商品跳转
   goodDatail(e){
     // url = "../detail/detail?id={{item.id}}"

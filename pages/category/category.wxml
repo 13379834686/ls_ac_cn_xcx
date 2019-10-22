@@ -2,10 +2,12 @@
 <view class="tentainer">
   <!-- 左菜单 -->
   <view class="left">
+    <!-- <view class="" >{{activeId}} = 1</view> -->
+    <view  class="{{activeId=='0'?'active':''}}" data-id="0" bindtap="selectType">{{activeId}}全部商品</view>
     <view wx:for="{{typeList}}" wx:key="" class="{{item.cate_id==activeId?'active':''}}" bindtap="selectType" data-id="{{item.cate_id}}">
       {{item.cate_title}}
     </view>
-    <!-- <view class="active">1111</view> -->
+    
   </view>
 
   <!-- 右菜单 -->
@@ -14,7 +16,8 @@
       <image mode="widthFix" src="/assets/image/g1.jpg"></image>
     </view>
     <view class="right-view" >
-        <view class="right-list-img" wx:for="{{goodsList}}" wx:key="" bindtap="goodDatail" data-id="{{item.id}}">
+        <view class="right-list-img" wx:for="{{goodsList}}" wx:key=""  bindtap="goodDatail" data-id="{{item.id}}">
+        
           <image class="img" src="{{item.image}}"></image>
           <text>{{item.title}}</text>
         </view>
