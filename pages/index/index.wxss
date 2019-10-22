@@ -1,0 +1,93 @@
+/* pages/index/index.wxss */
+
+.bk-code{
+  background-color: red;
+}
+.nav-menu{
+  flex-direction:row;
+  display: flex;
+}
+.nav-img {
+  width: 96rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  margin: auto;
+  border-radius: 49rpx;
+  border: 1px solid red;
+}
+.nav-menu .nav-img image {
+  display: none;
+}
+.nav-menu .nav-img text {
+  font-size: 24rpx;
+}
+
+.row .product-icon{
+  border: 1px solid #000000;
+  text-align: center;
+}
+.row .product-icon image{
+   width: 50%;
+   height: 72rpx;
+}
+
+
+/* 商品列表 */
+.lists{
+  width: 100%;
+  height: 100%; 
+}
+.lists .flexs{
+  text-align: center;
+}
+
+.lists .flexs .items{
+  font-size: 0.5rem;
+  float: left;
+  width: 45%;
+  margin: 2%;
+  border: 1px solid #000000;
+}
+.lists .flexs .items image{
+  width: 100%;
+  height: 320rpx;
+}
+
+.lists .flexs .items .product-text .name{
+  display: flex;
+  flex-flow:row;
+  width: 80%;
+  text-align: left;
+  margin-left: 6rpx;
+  font-size: 38rpx;
+  overflow: hidden;
+  /*不换行*/
+  white-space:nowrap;
+	/*添加...*/
+	text-overflow:ellipsis;
+  font-weight: 400;
+
+}
+
+.lists .flexs .items .margin-text{
+  display: flex;
+  flex-flow:row;
+  color: #8a8a8a;
+}
+
+.margin-text .text-left{
+  width: 60%;
+  font-size: 34rpx;
+  margin-left: 6rpx;
+  text-align: left;
+  color: red;
+
+}
+.margin-text .text-right{
+  width: 40%; 
+  text-align: left;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  /* margin-right: 6rpx; */
+}

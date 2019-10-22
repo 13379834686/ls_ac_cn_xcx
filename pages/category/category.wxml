@@ -1,0 +1,33 @@
+<!--pages/category/category.wxml-->
+<view class="tentainer">
+  <!-- 左菜单 -->
+  <view class="left">
+    <view  wx:for="{{typeList}}" wx:key="" class="{{item.id===activeId?'active':''}}" bindtap="selectType" data-id="{{item.id}}">
+      {{item.title}}
+    </view>
+    <!-- <view class="active">1111</view> -->
+  </view>
+
+  <!-- 右菜单 -->
+  <view class="right">
+    <view class="right-img">
+      <image mode="aspectFit" src="/image/p1.jpg"></image>
+    </view>
+    <view class="right-view">
+      <view class="right-list-img">
+        <image src="/image/cg1.jpg"></image>
+        <text>萌妹纸1</text>
+      </view>
+      <view class="right-list-img">
+        <image mode="scaleToFill" src="/image/cg1.jpg"></image>
+        <text>萌妹纸1</text>
+      </view>
+      <view class="right-list-img">
+        <image src="/image/cg1.jpg"></image>
+        <text>萌妹纸1</text>
+      </view>
+    </view>
+   
+
+  </view>
+</view>

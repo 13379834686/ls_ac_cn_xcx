@@ -1,0 +1,69 @@
+<!--pages/index/index.wxml-->
+<view class="row">
+  <view class="swiper-container">
+    <swiper indicator-dots="{{indicator}}" autoplay="{{autoplay}}" interval="{{interval}}">
+      <block wx:for="{{imageUrl}}" wx:key="">
+        <swiper-item class="bk-code">
+          <view class="swiper-item">{{item.url}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="hr"></view>
+  <!-- 第一组导航按钮 -->
+  <view class="nav-menu">
+    <view class="nav-img" wx:for="{{navImg}}" wx:key="" wx:if="{{index <= 4}}">
+      <navigator url="{{item.link}}?id={{item.id}}">
+        <image mode="aspectFit" src="{{item.url}}"></image>
+        <view class="hr"></view>
+        <text style="fond-size:24rpx;">{{item.title}}</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="hr"></view>
+  <!-- 第二组导航按钮 -->
+  <view class="nav-menu">
+    <view class="nav-img" wx:for="{{navImg}}" wx:key="" wx:if="{{index >= 5}}">
+      <navigator url="{{item.link}}?id={{item.id}}">
+        <image mode="aspectFit" src="{{item.url}}"></image>
+        <text>{{item.title}}</text>
+      </navigator>
+
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class="hr"></view>
+  <view class="row">
+    <view class="product-icon">
+      <image src="/image/product-icon1.jpg"></image>
+    </view>
+
+    <!-- 商品列表 -->
+    <view class="lists">
+      <view class="flexs">
+        <view wx:for="{{productList}}" wx:key="">
+          <view class="items">
+            <image src="{{item.productImg}}"></image>
+            <view class="hr"></view>
+            <view class="product-text">
+
+              <text class="name">{{item.name}}</text>
+
+              <view class="hr"></view>
+<view class="hr"></view>
+              <view class="margin-text">
+                <text class="text-left">¥:{{item.price}}</text>
+                <text class="text-right">已售:{{item.sold}}</text>
+              </view>
+
+            </view>
+
+
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

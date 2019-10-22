@@ -1,0 +1,59 @@
+/* pages/category/category.wxss */
+
+.tentainer{
+  /* 外包围需 display: flex;  flex: 1; 才能生效*/
+  display: flex; 
+  /* 最少100% */
+  min-height: 100vh;
+
+}
+/* 做菜单 */
+.left{
+  width: 200rpx;
+  background: #eee;
+  text-align: center;
+}
+.left view{
+  padding: 20rpx 0;
+}
+.left view.active{
+  color: burlywood;
+  background: #fff;
+}
+
+/* 右菜单 */
+ /* 
+ flex-wrap: wrap 换行 
+ */
+.right{
+  flex: 1;
+}
+
+/*右边栏 广告图 */
+.right-img{
+  max-width: 550rpx;
+  max-height: 240rpx;
+}
+.right-img image{
+  max-height: 228rpx;
+  border-bottom: 1px solid #b9b8b8ab;
+}
+
+/* 右边栏菜单属性 */
+.right-view{
+  display: flex;
+  flex-wrap: wrap;
+} 
+.right .right-view .right-list-img{
+  width: 50%;
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.right .right-view .right-list-img image{
+  width: 80%;
+  height: 70%;
+}
