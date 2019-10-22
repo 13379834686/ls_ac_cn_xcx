@@ -1,4 +1,5 @@
 //app.js
+
 App({
 
   
@@ -6,7 +7,19 @@ App({
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function () {
-    
+    // wx.login({
+    //   success: res => {
+    //     if (res.code) {
+    //       this.globalData.loginCode = res.code   // 获取的code码，以进一步换取用户信息
+    //       // res: {
+    //       //   code: "061Zltjh1sXj6s0z96hh1Z1njh1Zltj5"
+    //       //   errMsg: "login:ok"
+    //       // }
+    //     } else {
+    //       console.log('登录失败！' + res.errMsg)
+    //     }
+    //   }
+    // })
   },
 
   /**
@@ -28,5 +41,14 @@ App({
    */
   onError: function (msg) {
     
+  },
+
+  globalData:{
+    userInfo:null,
+    loginCode:null,
+    version:'1.1.0',
+    baseUrl:'https://ls.obj.ac.cn'
   }
+
+  
 })

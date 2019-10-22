@@ -1,0 +1,5 @@
+const CRYPTKEY = "A82DC5BD1F31332135908wx8c1089";
+
+module.exports = {
+  CRYPTKEY
+}

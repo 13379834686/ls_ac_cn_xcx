@@ -2,8 +2,8 @@
 <view class="tentainer">
   <!-- 左菜单 -->
   <view class="left">
-    <view wx:for="{{typeList}}" wx:key="" class="{{item.id===activeId?'active':''}}" bindtap="selectType" data-id="{{item.id}}">
-      {{item.title}}
+    <view wx:for="{{typeList}}" wx:key="" class="{{item.cate_id==activeId?'active':''}}" bindtap="selectType" data-id="{{item.cate_id}}">
+      {{item.cate_title}}
     </view>
     <!-- <view class="active">1111</view> -->
   </view>
