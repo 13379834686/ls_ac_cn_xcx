@@ -15,7 +15,7 @@
     </view>
     <view class="right-view" >
         <view class="right-list-img" wx:for="{{goodsList}}" wx:key="" bindtap="goodDatail" data-id="{{item.id}}">
-          <image class="img" src="{{item.img}}"></image>
+          <image class="img" src="{{item.image}}"></image>
           <text>{{item.title}}</text>
         </view>
     </view>

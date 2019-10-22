@@ -10,6 +10,15 @@ export function goodsCate(data) {
   })
 }
 
+export function goodsList(data) {
+  return request({
+    url: `${baseUrl}/goods.glists`,
+    method: 'post',
+    data
+  })
+}
+
+
 // 调用方式
 // import { goodsCate } from '../../api/user.js'
 // Page({

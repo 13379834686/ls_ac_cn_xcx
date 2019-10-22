@@ -1,4 +1,6 @@
 // pages/category/category.js
+// import { goodsCate } from '../../api/goods.js'
+var goods = require('../../api/goods.js')
 var ency = require('../../config/constants.js')
 Page({
   /**
@@ -7,28 +9,7 @@ Page({
   data: {
     activeId: '1',
     typeList: [],
-    goodsList: [{
-        'id': '1',
-        'title': '商品1',
-      'img': '/assets/image/cg1.jpg'
-      },
-      {
-        'id': '2',
-        'title': '商品2',
-        'img': '/assets/image/cg1.jpg'
-      },
-      {
-        'id': '3',
-        'title': '商品3',
-        'img': '/assets/image/cg1.jpg'
-      },
-      {
-        'id': '4',
-        'title': '商品4',
-        'img': '/assets/image/cg1.jpg'
-      },
-
-    ]
+    goodsList: []
 
   },
   
@@ -36,27 +17,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function() {
-    var that = this
-    
-    wx.request({
-      url: 'https://ls.obj.ac.cn/goods.cate',
-      method:'post',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      data:{
-        ency: ency.CRYPTKEY
-      },
-      success:function(res){
-        console.log(res.data.data);
-        that.setData({
-          typeList: res.data.data,
-          
-        })
-      },
-    })
+
+    this.gCate()
+    this.glists()
+
   },
 
+  gCate(){
+    var _this = this
+    goods.goodsCate({
+      ency:ency.CRYPTKEY
+    }).then(function (res){
+      _this.setData({ typeList:res.data.list })
+      }).catch(function (error){
+        console.log(error)
+    })
+  },
+  glists(){
+    var _this = this
+    goods.goodsList({
+      ency: ency.CRYPTKEY
+    }).then(function (res) {
+      _this.setData({ goodsList: res.data.glist })
+      // console.log(res)
+    }).catch(function (error) {
+      console.log(error)
+    })
+  },
 
   selectType(e) {
     // 点击获取当前选中id
