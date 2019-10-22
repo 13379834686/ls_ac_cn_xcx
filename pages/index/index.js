@@ -28,11 +28,11 @@ Page({
       { 'id': '10', 'title': '首页首页', 'url': 'nav11111.jpg', 'link': ''},
     ], 
     productList:[
-      {'id':'10','name':'商品名称1111111111111111','price':'1111111','sold':'11118','productImg':'/image/p1.jpg'},
-      { 'id': '11', 'name': '商品名称2', 'price': '100', 'sold': '5', 'productImg': '/image/p1.png' },
-      { 'id': '12', 'name': '商品名称3', 'price': '100', 'sold': '8', 'productImg': '/image/p1.png' },
-      { 'id': '13', 'name': '商品名称4', 'price': '100', 'sold': '11', 'productImg': '/image/p1.png' },
-      { 'id': '14', 'name': '商品名称5', 'price': '100', 'sold': '21', 'productImg': '/image/p1.png' }
+      {'id':'10','name':'商品名称1111111111111111','price':'1111111','sold':'11118','productImg':'/assets/image/p1.jpg'},
+      { 'id': '11', 'name': '商品名称2', 'price': '100', 'sold': '5', 'productImg': '/assets/image/p1.png' },
+      { 'id': '12', 'name': '商品名称3', 'price': '100', 'sold': '8', 'productImg': '/assets/image/p1.png' },
+      { 'id': '13', 'name': '商品名称4', 'price': '100', 'sold': '11', 'productImg': '/assets/image/p1.png' },
+      { 'id': '14', 'name': '商品名称5', 'price': '100', 'sold': '21', 'productImg': '/assets/image/p1.png' }
     ]
   },
   

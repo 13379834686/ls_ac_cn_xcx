@@ -39,22 +39,22 @@ Page({
     goodsList: [{
         'id': '1',
         'title': '商品1',
-        'img': '/image/cg1.jpg'
+      'img': '/assets/image/cg1.jpg'
       },
       {
         'id': '2',
         'title': '商品2',
-        'img': '/image/cg1.jpg'
+        'img': '/assets/image/cg1.jpg'
       },
       {
         'id': '3',
         'title': '商品3',
-        'img': '/image/cg1.jpg'
+        'img': '/assets/image/cg1.jpg'
       },
       {
         'id': '4',
         'title': '商品4',
-        'img': '/image/cg1.jpg'
+        'img': '/assets/image/cg1.jpg'
       },
 
     ]

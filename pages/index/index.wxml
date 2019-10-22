@@ -36,7 +36,7 @@
   <view class="hr"></view>
   <view class="row">
     <view class="product-icon">
-      <image src="/image/product-icon1.jpg"></image>
+      <image src="/assets/image/product-icon1.jpg"></image>
     </view>
 
     <!-- 商品列表 -->
