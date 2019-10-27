@@ -1,5 +1,7 @@
 /* pages/category/category.wxss */
-
+.hr{
+  max-height: 10rpx;
+}
 .tentainer{
   /* 外包围需 display: flex;  flex: 1; 才能生效*/
   display: flex; 
@@ -7,9 +9,9 @@
   min-height: 100vh;
 
 }
-/* 做菜单 */
+/* 左侧菜单 */
 .left{
-  width: 200rpx;
+  width: 220rpx;
   background: #eee;
   text-align: center;
 }
@@ -17,11 +19,11 @@
   padding: 20rpx 0;
 }
 .left view.active{
-  color: burlywood;
-  background: #fff;
+  color: #fff;
+  background: #4DAFE2;
 }
 
-/* 右菜单 */
+/* 右侧菜单 */
  /* 
  flex-wrap: wrap 换行 
  */
@@ -32,7 +34,7 @@
 /*右边栏 广告图 */
 .right-img{
   max-width: 550rpx;
-  max-height: 240rpx;
+  max-height: 228rpx;
 }
 .right-img image{
   width: 100%;
@@ -58,4 +60,5 @@
 .right-list-img .img{
   width: 80%;
   height: 70%;
+  border-radius: 50%;
 }

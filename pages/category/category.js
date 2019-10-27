@@ -1,7 +1,9 @@
 // pages/category/category.js
 // import { goodsCate } from '../../api/goods.js'
-var goods = require('../../api/goods.js')
-var ency = require('../../config/constants.js')
+var goods = require('../../api/goods.js');
+var encykey = require('../../config/constants.js');
+var ency = encykey.CRYPTKEY;
+
 Page({
   /**
    * 页面的初始数据
@@ -9,8 +11,8 @@ Page({
   data: {
     activeId: 0,
     typeList: [],
-    goodsList: []
-
+    goodsList: [],
+    sonCateList: []
   },
   
   /**
@@ -18,31 +20,34 @@ Page({
    */
   onLoad: function() {
     this.gCate()
-    this.glists()
+    this.goodsSonActiveCateList()
   },
 
+  // 一级分类
   gCate(){
     var _this = this
-    goods.goodsCate({
-      ency:ency.CRYPTKEY
+    goods.goodsTopCate({
+      ency
     }).then(function (res){
       // console.log(res)
       _this.setData({ 
         typeList:res.data.list,
-        // activeId: res.data.gid
+        // 默认第一个一级分类
+        activeId: res.data.gid
         })
       }).catch(function (error){
         console.log(error)
     })
   },
 
-  glists(){
+  // 获取默认二级分类
+  goodsSonActiveCateList(){
     var _this = this
-    goods.goodsList({
-      ency: ency.CRYPTKEY,
+    goods.goodsSonSate({
+      ency
     }).then(function (res) {
-      _this.setData({ 
-        goodsList: res.data.glist,
+      _this.setData({
+        sonCateList: res.data.list,
       })
       console.log(res)
     }).catch(function (error) {
@@ -50,17 +55,17 @@ Page({
     })
   },
 
-
+  // 一级分类菜单点击事件获取二级分类
   selectType(e) {
     var _this = this
     // 点击获取当前选中id
-    console.log("222222--"+e.currentTarget.dataset.id)
-    goods.atGoodsList({
-      ency: ency.CRYPTKEY,
+    // console.log("222222--"+e.currentTarget.dataset.id)
+    goods.goodsSonSate({
+      ency,
       typeid: e.currentTarget.dataset.id
     }).then(function (res) {
-      _this.setData({ goodsList: res.data.productList })
-      // console.log(res)
+      _this.setData({ sonCateList: res.data.list })
+      console.log(res)
     }).catch(function (error) {
       console.log(error)
     })
@@ -71,11 +76,20 @@ Page({
   },
   
   // 通过navigateTo实现商品跳转
-  goodDatail(e){
+  // goodDatail(e){
+  //   // url = "../detail/detail?id={{item.id}}"
+  //   // console.log(e.currentTarget.dataset.id)
+  //   wx.navigateTo({
+  //     url: '../goodslist/goodslist?id=' + e.currentTarget.dataset.id,
+  //   })
+  // },
+
+  //根据二级分类id跳转到商品列表
+  goodslist(e) {
     // url = "../detail/detail?id={{item.id}}"
-    // console.log(e.currentTarget.dataset.id)
+    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '../gdetail/gdetail?id=' + e.currentTarget.dataset.id,
+      url: '../goodslist/goodslist?id=' + e.currentTarget.dataset.id,
     })
   }
   

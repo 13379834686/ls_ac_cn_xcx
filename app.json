@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/category/category",
     "pages/page2/page2",
-    "pages/gdetail/gdetail"
+    "pages/gdetail/gdetail",
+    "pages/goodslist/goodslist"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -9,7 +9,6 @@ const request = (options) => {
       header: { 'Content-Type': 'application/json' },
       ...options,
       success: function (res) {
-
         if (res.data.code === 0) {
           resolve(res.data)
         } else {
