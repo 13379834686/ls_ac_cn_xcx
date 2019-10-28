@@ -1,6 +1,5 @@
 // pages/category/category.js
-// import { goodsCate } from '../../api/goods.js'
-var goods = require('../../api/goods.js');
+var goodscate = require('../../api/goodscate.js');
 var encykey = require('../../config/constants.js');
 var ency = encykey.CRYPTKEY;
 
@@ -26,7 +25,7 @@ Page({
   // 一级分类
   gCate(){
     var _this = this
-    goods.goodsTopCate({
+    goodscate.goodsTopCate({
       ency
     }).then(function (res){
       // console.log(res)
@@ -43,13 +42,13 @@ Page({
   // 获取默认二级分类
   goodsSonActiveCateList(){
     var _this = this
-    goods.goodsSonSate({
+    goodscate.goodsSonSate({
       ency
     }).then(function (res) {
       _this.setData({
         sonCateList: res.data.list,
       })
-      console.log(res)
+      // console.log(res)
     }).catch(function (error) {
       console.log(error)
     })
@@ -60,12 +59,12 @@ Page({
     var _this = this
     // 点击获取当前选中id
     // console.log("222222--"+e.currentTarget.dataset.id)
-    goods.goodsSonSate({
+    goodscate.goodsSonSate({
       ency,
       typeid: e.currentTarget.dataset.id
     }).then(function (res) {
       _this.setData({ sonCateList: res.data.list })
-      console.log(res)
+      // console.log(res)
     }).catch(function (error) {
       console.log(error)
     })

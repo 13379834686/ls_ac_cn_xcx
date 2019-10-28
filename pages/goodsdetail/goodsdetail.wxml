@@ -1,0 +1,4 @@
+<!--pages/goodsdetail/goodsdetail.wxml-->
+<text>pages/goodsdetail/goodsdetail.wxml</text>
+
+<view>{{goodsid}}</view>

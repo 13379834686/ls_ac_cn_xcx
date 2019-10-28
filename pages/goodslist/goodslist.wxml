@@ -1,2 +1,42 @@
 <!--pages/goodslist/goodslist.wxml-->
-<view>这是分类id：{{cateid}}</view>
+<!-- <view>这是分类id：{{cateid}}</view> -->
+<view wx:if="{{emptys==0}}" class="emptys">
+  <view>暂无商品</view>
+</view>
+<view wx:else>
+  <view class="hr"></view>
+
+  <view class="tentainer">
+    <view class="row">
+
+      <view class="content" wx:for="{{goodsListData}}" wx:key="" bindtap="btnGoodsDetail" data-id="{{item.id}}">
+        <image class="img" src="{{item.logo}}"></image>
+        <view class="hr"></view>
+        <view class="title">{{item.title}}</view>
+        <view class="hr"></view>
+        <view class="price-row">
+          <text>¥</text>
+          <text class="price">{{item.price_selling}}</text>
+        </view>
+      </view>
+
+
+    </view>
+
+
+    <!-- <view class="row">
+      <view class="tiems">
+        <view class="content">
+          <image class="img" src="/assets/image/cg1.jpg"></image>
+          <view>标题1</view>
+        </view>
+      </view>
+    </view> -->
+
+
+
+
+
+
+  </view>
+</view>

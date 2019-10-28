@@ -1,1 +1,82 @@
 /* pages/goodslist/goodslist.wxss */
+/* 隐藏滚动条 */
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+
+page{
+  background: #e4e4e4;
+}
+
+.hr{
+  max-height: 10rpx;
+}
+
+.emptys{
+  width: 100%;
+  margin-top: 50%;
+  text-align: center;
+  color: #8a8a8a;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+
+
+
+/* 商品列表内容 */
+.tentainer{
+  display: flex;
+  min-height: 100vh;
+}
+
+/*
+  flex-wrap: wrap; 换行
+  flex: 1; 左浮动
+  align-content: flex-start;与交叉轴的起点对齐
+ */
+.row{
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+/*
+  flex-direction: column; 向下沿
+  align-items: center; 居中
+ */
+.row .content{
+  width: 48%;
+  height: 450rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 2.5% 3%;
+  margin: 1%;
+  box-sizing: border-box;
+}
+.row .content .img{
+  width: 90%;
+  height: 90%;
+}
+.row .content .title{
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}
+.row .content .price-row{
+  width: 100%;
+  color: red;
+  font-size: 24rpx;
+}
+.row .content .price-row .price{
+  font-size: 32rpx;
+  font-weight: 600;
+}
