@@ -16,7 +16,7 @@ Page({
     ],
     //navImg导航按钮图标
     navImg:[
-      { 'id': '1', 'title': '首页1', 'url': 'nav11111.jpg', 'link':'/pages/page2/page2'},
+      { 'id': '1', 'title': '返回首页', 'url': '../home/home', 'link':'/pages/home/home'},
       { 'id': '2', 'title': '首页2', 'url': 'nav11111.jpg' ,'link': ''},
       { 'id': '3', 'title': '首页3', 'url': 'nav11111.jpg' ,'link': ''},
       { 'id': '4', 'title': '首页4', 'url': 'nav11111.jpg' ,'link': ''},
@@ -70,7 +70,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    wx.reLaunch({
+      url: '../home/home'
+    })
   },
 
   /**
@@ -92,5 +94,7 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+ 
 })

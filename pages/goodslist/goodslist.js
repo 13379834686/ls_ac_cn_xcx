@@ -39,7 +39,7 @@ Page({
       cateid
     }).then(function(res) {
       // console.log('22222222222222--')
-      // console.log(res)
+      console.log(res)
       _this.setData({
         emptys: res.data.goodsList.length,
         // goodsListData: res.data.goodsList

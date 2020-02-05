@@ -6,7 +6,8 @@
     "pages/gdetail/gdetail",
     "pages/goodslist/goodslist",
     "pages/empty/empty",
-    "pages/goodsdetail/goodsdetail"
+    "pages/goodsdetail/goodsdetail",
+    "pages/sweep/sweep"
   ],
   "window": {
     "backgroundTextStyle": "light",
